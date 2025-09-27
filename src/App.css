@@ -1,0 +1,48 @@
+/* /* App.css */
+
+/* Basic reset and ensure full height for the app */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* --- NEW: Wrapper for everything to the right of the fixed sidebar --- */
+.main-app-content {
+  margin-left: 290px; /* Offset to make space for the 290px fixed sidebar */
+  min-height: 100vh; /* Ensures this container takes full height for its flex children */
+  display: flex;
+  flex-direction: column; /* Stacks Navbar, main content, and Footer vertically */
+  width: calc(100% - 290px); /* Fills the remaining horizontal space */
+  position: relative; /* Necessary for the Navbar's 'sticky' position to work correctly within this bounded area */
+}
+/* --- END NEW --- */
+
+/* The main area where routes (like Dashboard) will render */
+.main-route-content {
+  flex: 1; /* This makes it grow to fill all available vertical space, pushing Footer to the bottom */
+  overflow-y: auto; /* Important: Allows the content within this area to scroll independently */
+  box-sizing: border-box;
+  padding: 1rem 2rem; /* Added some default padding, Dashboard can override */
+  background-color: #f8f8f8; /* A light background for the main content area */
+}
+
+
+/* --- Styles for Dashboard Content Filler, assuming it's still needed to demonstrate scrolling --- */
+.dashboard-content-filler {
+  height: 1500px; /* Make content long enough to demonstrate scrolling */
+  background: linear-gradient(to bottom, #e0f7fa, #80deea);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  color: #004d40;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+.dashboard-content-filler h3 {
+    margin-top: 0;
+    color: #004d40;
+}
