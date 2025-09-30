@@ -20,7 +20,8 @@ const LogoutIcon = ({ style = iconStyle }) => <svg style={style} fill="none" str
 
 // --- Navigation Links Data ---
 const navLinks = [
-  { to: "/services", text: "Dashboard", icon: DashboardIcon },
+  // { to: "/services", text: "Services", icon: DashboardIcon },    
+  { to: "/Dashboard", text: "Dashboard", icon: DashboardIcon },
   { to: "/tourists", text: "Tourists", icon: TouristsIcon },
   { to: "/incidents", text: "Incidents & Alerts", icon: IncidentsIcon },
   { to: "/reports-analytics", text: "Reports & Analytics", icon: ReportsAnalyticsIcon },
@@ -92,14 +93,14 @@ const styles = {
     //position: 'sticky', // Make it sticky (removed)
     /*  DYNAMIC TOP VALUE  */
     //top: ({ navbarHeight }) => `${navbarHeight}px`, // Access navbarHeight from props (removed)
-    left: 0,
+    // left: 0,
     padding: '20px 0',
     boxShadow: '2px 0 10px rgba(0,0,0,0.3)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     zIndex: 600,
-    height: '100vh'
+    height: '100%'
   },
   logoContainer: {
     display: 'flex',

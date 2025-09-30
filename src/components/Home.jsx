@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from './Footer.jsx';
+// import Footer from './Footer.jsx';
 
 
 function Home() {
@@ -183,7 +183,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

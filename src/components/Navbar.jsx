@@ -1,6 +1,7 @@
 // Navbar.jsx
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { Link } from 'react-router-dom';
+import Home from './Home.jsx';
 
 const Navbar = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,7 +59,7 @@ const Navbar = forwardRef((props, ref) => {
 
 
   return (
-    <nav className="bg-blue-900 text-white shadow-lg sticky top-0 z-800" ref={navbarRef}>
+    <nav className="bg-blue-900 text-white shadow-lg sticky top-0 "  ref={navbarRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 font-bold text-xl">
@@ -119,6 +120,8 @@ const Navbar = forwardRef((props, ref) => {
             <Link to="/about" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">About</Link>
             <Link to="/contact" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
             <Link to="/login" className="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">Login</Link>
+            <Link to="/profile" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Profile</Link>
+            <Link to="/login" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Logout</Link>
           </div>
           <div className="md:hidden">
             <button
@@ -151,6 +154,8 @@ const Navbar = forwardRef((props, ref) => {
             <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">About</Link>
             <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Contact</Link>
             <Link to="/login" className="block bg-blue-600 hover:bg-blue-500 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Login</Link>
+            <Link to="/profile" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Profile</Link>
+            <Link to="/login" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Logout</Link>
           </div>
         </div>
       )}

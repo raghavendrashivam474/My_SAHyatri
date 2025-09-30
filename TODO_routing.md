@@ -1,0 +1,3 @@
+- [x] Remove BrowserRouter from index.js
+- [x] Update App.jsx to use RouterProvider and fix route paths
+- [ ] Test routing functionality

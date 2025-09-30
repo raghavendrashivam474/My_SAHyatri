@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"; // Import Link for navigation
-import Header from './Header';
-import Footer_80 from './Footer_80';
+// import Header from './Header';
+// import Footer_80 from './Footer_80';
 
 function SettingsAdmin() {
   const [users, setUsers] = useState([
@@ -68,7 +68,7 @@ function SettingsAdmin() {
   return (
     <div style={styles.pageBackground}>
       {/* Dashboard Header - Full Width (Standardized) */}
-      <Header />
+      {/* <Header /> */}
 
       <div style={styles.mainContentWrapper}>
         {/* Page-specific Header/Title */}
@@ -177,7 +177,7 @@ function SettingsAdmin() {
           </div>
         </div>
       </div>
-      <Footer_80/>
+      {/* <Footer_80/> */}
     </div>
   );
 }

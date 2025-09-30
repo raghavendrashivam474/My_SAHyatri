@@ -140,7 +140,7 @@ function Login() {
 
   return (
     <>
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 flex items-center justify-center py-12 px-4 relative overflow-hidden w-[80vw]">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 flex items-center justify-center py-12 px-4 relative overflow-hidden w-[99vw]">
       <style jsx>{`
         @keyframes shake {
           0%, 100% { transform: translateX(0); }
