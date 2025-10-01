@@ -20,8 +20,8 @@ const LogoutIcon = ({ style = iconStyle }) => <svg style={style} fill="none" str
 
 // --- Navigation Links Data ---
 const navLinks = [
-  // { to: "/services", text: "Services", icon: DashboardIcon },    
-  { to: "/Dashboard", text: "Dashboard", icon: DashboardIcon },
+  // { to: "/services", text: "Services", icon: DashboardIcon },
+  { to: "/dashboard", text: "Dashboard", icon: DashboardIcon },
   { to: "/tourists", text: "Tourists", icon: TouristsIcon },
   { to: "/incidents", text: "Incidents & Alerts", icon: IncidentsIcon },
   { to: "/reports-analytics", text: "Reports & Analytics", icon: ReportsAnalyticsIcon },
