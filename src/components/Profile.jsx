@@ -40,8 +40,8 @@ const InputField = ({ label, name, value, onChange, type = 'text' }) => (
 
 function Profile() {
   const [user, setUser] = useState({
-    name: 'John Doe',
-    email: 'john.doe@example.com',
+    name: 'Raghavnedra Singh',
+    email: 'raghavendrashoivam474@example.com',
     // --- CORRECTED LINE ---
     // Removed the curly braces around myImage
     profilePicture: myImage, 

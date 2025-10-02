@@ -228,7 +228,7 @@ const styles = {
         lineHeight: '1.6',
     },
     mainContentWrapper: {
-        width: '82vw', // Set width to 80% of the viewport width
+        width: '80vw', // Set width to 80% of the viewport width
         float: 'right', // Float the container to the right
         padding: '30px 40px', // Adjusted horizontal padding
         boxSizing: 'border-box', // Ensures padding doesn't add to the width

@@ -1,6 +1,6 @@
 // sidebar.jsx
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 // --- Icon Components ---
 // Reusing and adding new icons for the sidebar
@@ -36,6 +36,7 @@ function Sidebar() { // Renamed from Header to Sidebar
 
   const handleLogout = () => {
     navigate('/login');
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -70,7 +71,7 @@ function Sidebar() { // Renamed from Header to Sidebar
       <div style={styles.userActions}>
         <div style={styles.divider}></div> {/* A separator */}
 
-        <Link to="/profile" style={location.pathname === '/profile' ? styles.navLinkActive : styles.navLink}>
+        <Link to="/profile" style={location.pathname === '/profile' ? styles.navLinkActive : styles.navLink} onClick={() => window.scrollTo(0, 0)}>
           <ProfileIcon style={{...iconStyle, color: location.pathname === '/profile' ? styles.navLinkActive.color : styles.navLink.color}} />
           Profile
         </Link>

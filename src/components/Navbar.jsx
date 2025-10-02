@@ -3,6 +3,12 @@ import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } f
 import { Link } from 'react-router-dom';
 import Home from './Home.jsx';
 
+const LogoutIcon = ({ style }) => (
+  <svg style={style} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+  </svg>
+);
+
 const Navbar = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showDashboardPreview, setShowDashboardPreview] = useState(false);
@@ -121,7 +127,10 @@ const Navbar = forwardRef((props, ref) => {
             <Link to="/contact" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
             <Link to="/login" className="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">Login</Link>
             <Link to="/profile" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Profile</Link>
-            <Link to="/login" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Logout</Link>
+            <Link to="/login" className="flex items-center gap-3 text-red-300 hover:bg-red-900 px-3 py-2 rounded-md text-sm font-medium">
+              <LogoutIcon style={{ width: '20px', height: '20px' }} />
+              Logout
+            </Link>
           </div>
           <div className="md:hidden">
             <button
@@ -155,7 +164,10 @@ const Navbar = forwardRef((props, ref) => {
             <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Contact</Link>
             <Link to="/login" className="block bg-blue-600 hover:bg-blue-500 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Login</Link>
             <Link to="/profile" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Profile</Link>
-            <Link to="/login" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Logout</Link>
+            <Link to="/login" className="flex items-center gap-3 text-red-300 hover:bg-red-900 px-3 py-2 rounded-md text-base font-medium">
+              <LogoutIcon style={{ width: '20px', height: '20px' }} />
+              Logout
+            </Link>
           </div>
         </div>
       )}
