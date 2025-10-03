@@ -75,7 +75,7 @@ function Contact() {
 
   return (
     <>
-    <div className="w-full bg-gradient-to-br from-slate-50 to-blue-50 py-12 px-4 pt-20 relative z-5">
+    <div className="w-full  py-12 px-4 pt-20 relative z-5 overflow-visible">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">

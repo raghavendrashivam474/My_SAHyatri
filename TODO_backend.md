@@ -10,8 +10,8 @@
 - [x] Create backend/routes/auth.js for login/authentication
 - [x] Create backend/routes/reports.js for reports and analytics
 - [x] Create backend/routes/settings.js for settings and admin
+- [x] Create backend/routes/home.js for homepage statistics and news
+- [x] Register home route in server.js
 - [x] Uncomment routes in server.js
 - [x] Install dependencies
-
-## Next Steps
-- [ ] Test the backend server (run npm start in backend folder)
+- [x] Test the backend server (run npm start in backend folder)

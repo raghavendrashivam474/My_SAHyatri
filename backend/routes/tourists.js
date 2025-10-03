@@ -30,4 +30,6 @@ router.post('/', (req, res) => {
   res.status(201).json(newTourist);
 });
 
+// Export tourists data for use in other routes
+module.exports.tourists = tourists;
 module.exports = router;

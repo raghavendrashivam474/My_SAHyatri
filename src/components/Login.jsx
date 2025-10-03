@@ -140,7 +140,7 @@ function Login() {
 
   return (
     <>
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 flex items-center justify-center py-12 px-4 relative overflow-hidden w-[99vw]">
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 relative overflow-visible w-[99vw]">
       <style jsx>{`
         @keyframes shake {
           0%, 100% { transform: translateX(0); }
@@ -150,7 +150,7 @@ function Login() {
         .animate-shake { animation: shake 0.5s ease-in-out; }
       `}</style>
       
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-visible">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>

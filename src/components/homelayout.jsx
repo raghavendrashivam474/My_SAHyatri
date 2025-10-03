@@ -2,7 +2,7 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
-import Home from "./Home.jsx";
+// import Home from "./Home.jsx";
 import { Outlet } from "react-router-dom";
 
 function HomeLayout() {

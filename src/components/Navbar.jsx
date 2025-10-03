@@ -13,6 +13,7 @@ const LogoutIcon = ({ style }) => (
 const Navbar = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showDashboardPreview, setShowDashboardPreview] = useState(false);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
   const servicesButtonRef = useRef(null);
   const dropdownRef = useRef(null);
   const hideTimeoutRef = useRef(null);
@@ -28,6 +29,10 @@ const Navbar = forwardRef((props, ref) => {
   }, []);
 
   const handleServicesMouseEnter = () => {
+    if (servicesButtonRef.current) {
+      const rect = servicesButtonRef.current.getBoundingClientRect();
+      setDropdownPosition({ top: rect.bottom + 5, left: rect.left });
+    }
     setShowDashboardPreview(true);
     // Clear any pending hide timeout
     if (hideTimeoutRef.current) {
@@ -39,7 +44,7 @@ const Navbar = forwardRef((props, ref) => {
     // Delay hiding to allow mouse to reach dropdown
     hideTimeoutRef.current = setTimeout(() => {
       setShowDashboardPreview(false);
-    }, 150);
+    }, 500);
   };
 
   const handleDropdownMouseEnter = () => {
@@ -54,7 +59,7 @@ const Navbar = forwardRef((props, ref) => {
     // Delay hiding to allow mouse to reach Services button
     hideTimeoutRef.current = setTimeout(() => {
       setShowDashboardPreview(false);
-    }, 150);
+    }, 300);
   };
 
   // Expose the navbar's height to parent components via the ref
@@ -66,7 +71,7 @@ const Navbar = forwardRef((props, ref) => {
 
 
   return (
-    <nav className="bg-blue-900 text-white shadow-lg sticky top-0 "  ref={navbarRef}>
+    <nav className="bg-blue-900 text-white shadow-lg sticky top-0 relative overflow-visible z-50"  ref={navbarRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center gap-2">
@@ -88,39 +93,37 @@ const Navbar = forwardRef((props, ref) => {
               {showDashboardPreview && (
                 <div
                   ref={dropdownRef}
-                  className="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                  style={{ position: 'fixed', top: dropdownPosition.top, left: dropdownPosition.left, zIndex: 999999, width: '384px', backgroundColor: 'white', color: 'black', padding: '16px', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}
                   onMouseEnter={handleDropdownMouseEnter}
                   onMouseLeave={handleDropdownMouseLeave}
                 >
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold text-blue-900 mb-2">SAHYatri Dashboard Preview</h3>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div className="bg-blue-50 p-2 rounded">
-                        <div className="text-blue-900 font-semibold">Active Tourists</div>
-                        <div className="text-gray-600">1,247</div>
-                      </div>
-                      <div className="bg-green-50 p-2 rounded">
-                        <div className="text-green-900 font-semibold">Issued IDs</div>
-                        <div className="text-gray-600">8,934</div>
-                      </div>
-                      <div className="bg-orange-50 p-2 rounded">
-                        <div className="text-orange-900 font-semibold">Incidents</div>
-                        <div className="text-gray-600">12</div>
-                      </div>
-                      <div className="bg-red-50 p-2 rounded">
-                        <div className="text-red-900 font-semibold">Open SOS</div>
-                        <div className="text-gray-600">3</div>
-                      </div>
+                  <h3 style={{ fontSize: '1.125rem', fontWeight: 'bold', color: '#1e40af', marginBottom: '8px' }}>SAHYatri Dashboard Preview</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', fontSize: '0.875rem' }}>
+                    <div style={{ backgroundColor: '#e0f2fe', padding: '8px', borderRadius: '4px' }}>
+                      <div style={{ color: '#1e40af', fontWeight: '600' }}>Active Tourists</div>
+                      <div style={{ color: '#4b5563' }}>1,247</div>
                     </div>
-                    <div className="mt-3 text-center">
-                      <Link
-                        to="/dashboard"
-                        className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-sm font-medium transition-colors duration-200"
-                        onClick={() => setShowDashboardPreview(false)}
-                      >
-                        View Full Dashboard →
-                      </Link>
+                    <div style={{ backgroundColor: '#f0fdf4', padding: '8px', borderRadius: '4px' }}>
+                      <div style={{ color: '#166534', fontWeight: '600' }}>Issued IDs</div>
+                      <div style={{ color: '#4b5563' }}>8,934</div>
                     </div>
+                    <div style={{ backgroundColor: '#fff7ed', padding: '8px', borderRadius: '4px' }}>
+                      <div style={{ color: '#9a3412', fontWeight: '600' }}>Incidents</div>
+                      <div style={{ color: '#4b5563' }}>12</div>
+                    </div>
+                    <div style={{ backgroundColor: '#fef2f2', padding: '8px', borderRadius: '4px' }}>
+                      <div style={{ color: '#dc2626', fontWeight: '600' }}>Open SOS</div>
+                      <div style={{ color: '#4b5563' }}>3</div>
+                    </div>
+                  </div>
+                  <div style={{ marginTop: '12px', textAlign: 'center' }}>
+                    <Link
+                      to="/Dashboard"
+                      style={{ backgroundColor: '#2563eb', color: 'white', padding: '8px 16px', borderRadius: '4px', fontSize: '0.875rem', fontWeight: '500', textDecoration: 'none', display: 'inline-block' }}
+                      onClick={() => setShowDashboardPreview(false)}
+                    >
+                      View Full Dashboard →
+                    </Link>
                   </div>
                 </div>
               )}

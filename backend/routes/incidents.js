@@ -31,4 +31,6 @@ router.post('/', (req, res) => {
   res.status(201).json(newIncident);
 });
 
+// Export incidents data for use in other routes
+module.exports.incidents = incidents;
 module.exports = router;

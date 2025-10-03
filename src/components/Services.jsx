@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Services() {
+  const navigate = useNavigate();
+
   return (
     <div style={styles.pageBackground}>
       <div style={styles.mainContentWrapper}>
@@ -11,7 +13,7 @@ function Services() {
           <p style={styles.subtitle}>
             Ministry of Digital Affairs | Government of India
           </p>
-          <div style={styles.quickAccess}>
+          <div id="quick-access" style={styles.quickAccess}>
             <Link to="/dashboard" style={styles.quickButton}>
               <svg style={styles.buttonIcon} fill="currentColor" viewBox="0 0 20 20">
                 <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
@@ -186,8 +188,8 @@ function Services() {
             Join thousands of tourists who trust SAHYatri for their safety and convenience in India.
           </p>
           <div style={styles.ctaButtons}>
-            <Link to="/login" style={styles.ctaPrimaryButton}>Get Started</Link>
-            <Link to="/contact" style={styles.ctaSecondaryButton}>Contact Us</Link>
+            <button onClick={() => { navigate('/login'); window.scrollTo(0,0); }} style={styles.ctaPrimaryButton}>Get Started</button>
+            <button onClick={() => { navigate('/contact'); window.scrollTo(0,0); }} style={styles.ctaSecondaryButton}>Contact Us</button>
           </div>
         </div>
 
@@ -304,14 +306,16 @@ const styles = {
   },
   featureCard: {
     backgroundColor: '#ffffff',
-    borderRadius: '12px',
-    padding: '25px',
-    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.08)',
-    border: '1px solid #dcdcdc',
+    borderRadius: '16px',
+    padding: '30px',
+    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
+    border: '1px solid #e1e5e9',
     textAlign: 'center',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
   },
   featureIcon: {
-    backgroundColor: '#f8f9fa',
+    background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)',
     borderRadius: '50%',
     padding: '15px',
     margin: '0 auto 15px auto',
@@ -321,6 +325,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     color: '#007bff',
+    transition: 'all 0.3s ease',
   },
   featureTitle: {
     fontSize: '1.3em',
@@ -373,14 +378,15 @@ const styles = {
   featureButton: {
     display: 'inline-block',
     marginTop: '15px',
-    padding: '10px 20px',
-    backgroundColor: '#007bff',
+    padding: '12px 24px',
+    background: 'linear-gradient(135deg, #007bff 0%, #0056b3 100%)',
     color: '#ffffff',
     textDecoration: 'none',
-    borderRadius: '6px',
+    borderRadius: '8px',
     fontSize: '0.9em',
     fontWeight: '500',
-    transition: 'background-color 0.2s ease',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 15px rgba(0, 123, 255, 0.3)',
   },
   ctaSection: {
     backgroundColor: '#ffffff',
