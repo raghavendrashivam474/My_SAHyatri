@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { Link } from 'react-router-dom';
 import Home from './Home.jsx';
+import logo from '../images/logo-removebg-preview.png';
 
 const LogoutIcon = ({ style }) => (
   <svg style={style} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,8 +69,9 @@ const Navbar = forwardRef((props, ref) => {
     <nav className="bg-blue-900 text-white shadow-lg sticky top-0 "  ref={navbarRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 font-bold text-xl">
-            SAHYatri GOVERNMENT PORTAL
+          <div className="flex-shrink-0 flex items-center gap-2">
+            <img src={logo} alt="SAHYatri Logo" className="h-20 w-auto" />
+            <span className="font-bold text-xl">SAHYatri GOVERNMENT PORTAL</span>
           </div>
           <div className="hidden md:flex space-x-8">
             <Link to="/" className="hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium">Home</Link>
